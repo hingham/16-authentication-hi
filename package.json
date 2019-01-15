@@ -1,0 +1,22 @@
+{
+  "name": "16-authentication-hi",
+  "version": "1.0.0",
+  "description": "![CF](http://i.imgur.com/7v5ASc8.png) LAB =================================================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hingham/16-authentication-hi.git"
+  },
+  "author": "hannah ingham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hingham/16-authentication-hi/issues"
+  },
+  "homepage": "https://github.com/hingham/16-authentication-hi#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0"
+  }
+}

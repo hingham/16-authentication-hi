@@ -2,12 +2,16 @@
 
 const express = require('express');
 const router = express.Router();
+const auth = require('../auth/middleware.js');
 
-router.get('/books', handleGetAll);
-router.get('/books/:id', handleGetOne);
+
+router.get('/books', auth, handleGetAll);
+router.get('/books/:id', auth, handleGetOne);
+
 
 // Route Handlers
 function handleGetAll(req, res, next) {
+  console.log(req.token);
   let books = {
     count: 3,
     results: [
