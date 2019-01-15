@@ -54,4 +54,4 @@ http get :4000/books -a username:password
 * What assertions need to be / should be made?
 
 #### UML
-[!image](auth-wb-image.JPG)
+![image](./auth-server/assets/auth-wb-image.JPG)
