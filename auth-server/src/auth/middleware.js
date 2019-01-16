@@ -14,6 +14,8 @@ module.exports = (req, res, next) => {
     switch(authType.toLowerCase()) {
     case 'basic':
       return _authBasic(authString);
+    case 'bearer':
+      return _authBearer(authString);
     default:
       return _authError();
     }
@@ -43,9 +45,17 @@ module.exports = (req, res, next) => {
     }
   }
 
+  function _authBearer(str){
+    return user.authenticateToken(str)
+    .then(user=> _authenticate(user) 
+    .catch(next));
+  }
+
   function _authError() {
     next({status: 401, statusMessage: 'Unauthorized', message: 'Invalid User ID/Password'});
   }
+
+
 
 };
 

@@ -25,5 +25,9 @@ authRouter.post('/signin', auth, (req, res, next) => {
 });
 
 
+authRouter.get('/test', auth, (req, res, next)=>{
+  console.log('ok');
+});
+
 
 module.exports = authRouter;

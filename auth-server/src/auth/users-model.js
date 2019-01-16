@@ -20,6 +20,13 @@ users.pre('save', function(next) {
     .catch( error => {throw error;} );
 });
 
+users.statics.authenticateToken = function(token){
+  //decrypt it with the same secret
+  let parsedToken = jwt.verify(token, process.env.SECRET);
+  let query = {_id: parsedToken.id};
+  return this.findOne(query);
+};
+
 users.statics.authenticateBasic = function(auth) {
   let query = {username:auth.username};
   return this.findOne(query)
